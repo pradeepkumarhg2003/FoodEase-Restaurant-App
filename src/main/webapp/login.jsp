@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - FoodEase</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <i class="fas fa-utensils"></i>
+      <h1>FoodEase</h1>
+      <p>Welcome back! Please login to your account</p>
+    </div>
+    
+    <% 
+   String errorMessage = (String) request.getAttribute("errorMessage");
+   if (errorMessage != null) { 
+%>
+   <div class="error-message"><%= errorMessage %></div>
+<% 
+   } 
+%>
+
+
+    <form action="loginServlet" method="post">
+      <div class="form-group">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" class="form-input" placeholder="Enter your username" required>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" class="form-input" placeholder="Enter your password" required>
+      </div>
+
+      <label class="remember-me">
+        <input type="checkbox" name="remember">
+        Remember me
+      </label>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <div class="register-link">
+      Don't have an account? <a href="register.jsp">Sign up here</a>
+    </div>
+  </div>
+</body>
+</html>

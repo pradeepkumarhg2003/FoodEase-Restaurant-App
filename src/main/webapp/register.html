@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - FoodApp</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="css/register.css" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="register-container">
+    <div class="logo">
+      <i class="fas fa-utensils"></i>
+      <h1>FoodApp</h1>
+      <p>Join us! Create your account</p>
+    </div>
+
+    <form action="registerServlet" method="post">
+      <div class="form-group">
+        <i class="fas fa-user"></i>
+        <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <i class="fas fa-at"></i>
+          <input type="text" name="userName" class="form-input" placeholder="Username" required>
+        </div>
+
+        <div class="form-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" class="form-input" placeholder="Password" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <i class="fas fa-phone"></i>
+          <input type="tel" name="phoneNumber" class="form-input" placeholder="Phone Number" required>
+        </div>
+
+        <div class="form-group">
+          <i class="fas fa-user-tag"></i>
+          <select name="role" class="form-input" required>
+            <option value="">Select Role</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="restaurant_owner">Restaurant Owner</option>
+            <option value="delivery_person">Delivery Person</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-map-marker-alt"></i>
+        <input type="text" name="address" class="form-input" placeholder="Address" required>
+      </div>
+
+      <div class="terms-checkbox">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">
+          I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+        </label>
+      </div>
+
+      <button type="submit" class="register-btn">Create Account</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </div>
+</body>
+</html>
